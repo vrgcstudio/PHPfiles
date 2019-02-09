@@ -1,0 +1,16 @@
+body {
+    background-image: url("assets/png-flies/schoolweb/schoolweb-check-bg.png");
+}
+.pull-left {
+    margin-left: 20px;
+    float:left;
+}
+.pull-right {
+    margin-right: 20px;
+    float:right;
+}
+table, th, td {
+    border: 1px solid black;
+    border-radius: 5px;
+    border-collapse: collapse;
+  }

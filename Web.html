@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <meta charset="utf-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <script src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <br>
+    <div class="container-fluid">
+        <img class="pull-left" src="assets/png-flies/schoolweb/schoolweb-check-logo.png">
+        <img class="pull-right" src="assets/png-flies/schoolweb/schoolweb-check-van.png">
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container" style="margin-top: 10px">
+    <script>
+		$(document).ready(function() {
+			var grade = $('#grade').val();
+            var classroom = $('#classroom').val();
+                $.get('sortstu.php?grade=' + grade + '&classroom=' + classroom, function(data) {
+                    $('#display').html(data);
+                });
+            $('#grade').change(function(){ 
+                grade = $('#grade').val();
+                $.get('sortstu.php?grade=' + grade + '&classroom=' + classroom, function(data) {
+                    $('#display').html(data);
+                });
+            });
+            $('#classroom').change(function(){ 
+                classroom = $('#classroom').val();
+                $.get('sortstu.php?grade=' + grade + '&classroom=' + classroom, function(data) {
+                    $('#display').html(data);
+                });
+            });
+       	});
+	</script>
+    <select id="grade">
+        <option value="all">ทุกระดับชั้น</option>
+        <option value="ม.1">ชั้นมัธยมศึกษาปีที่ 1</option>
+        <option value="ม.2">ชั้นมัธยมศึกษาปีที่ 2</option>
+        <option value="ม.3">ชั้นมัธยมศึกษาปีที่ 3</option>
+    </select>
+    <select id="classroom">
+        <option value="all">ทุกห้อง</option>
+        <option value="1">ห้อง 1</option>
+        <option value="2">ห้อง 2</option>
+        <option value="3">ห้อง 3</option>
+        <option value="4">ห้อง 4</option>
+        <option value="5">ห้อง 5</option>
+        <option value="6">ห้อง 6</option>
+        <option value="7">ห้อง 7</option>
+        <option value="8">ห้อง 8</option>
+        <option value="9">ห้อง 9</option>
+        <option value="10">ห้อง 10</option>
+        <option value="11">ห้อง 11</option>
+        <option value="12">ห้อง 12</option>
+        <option value="13">ห้อง 13</option> 
+    </select>
+    <b><div id="display"></div></b>
+    </div>
+</body>
+</html>

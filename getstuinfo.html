@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>stuinfo</title>
+	<meta charset="utf-8">
+	<script src="jquery-3.3.1.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			var school = $('#school').val();
+                $.get('getstuinfo.php?school=' + school, function(data) {
+                    $('#display').html(data);
+                });
+            $('#school').change(function() {
+            	$('#display').html('Loadding...')
+                var school = $('#school').val();
+                $.get('getstuinfo.php?school=' + school, function(data) {
+                    $('#display').html(data);
+                });
+            });
+       	});
+	</script>
+</head>
+<body>
+    <select id="school">
+        <option value="PRC">The Prince Royal's College</option>
+        <option value="DARA">Dara Academy</option>
+    </select>
+	<b><div id="display"></div></b>
+</body>
+</html>
